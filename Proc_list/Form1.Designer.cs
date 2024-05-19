@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonstop = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // comboBox
@@ -61,6 +63,7 @@
             this.buttonstop.TabIndex = 2;
             this.buttonstop.Text = "Stop";
             this.buttonstop.UseVisualStyleBackColor = true;
+            this.buttonstop.Click += new System.EventHandler(this.buttonstop_Click);
             // 
             // labelInfo
             // 
@@ -70,6 +73,12 @@
             this.labelInfo.Size = new System.Drawing.Size(24, 13);
             this.labelInfo.TabIndex = 3;
             this.labelInfo.Text = "info";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -82,17 +91,25 @@
             this.Controls.Add(this.comboBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.TopMost = true;
+            //this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.FormClosing+= new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
+            //
+            ////////
+            
+            proc_close_handler = new System.EventHandler(this.process_Exited);
         }
 
         #endregion
+            System.EventHandler proc_close_handler;
 
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonstop;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

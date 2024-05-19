@@ -113,9 +113,9 @@ namespace WindowsProcess
         }
         private int CPU_Time()
         {
-            int time;
+            int time = 0;
             TimeSpan span = process.UserProcessorTime + process.PrivilegedProcessorTime;
-            TimeSpan 
+            //TimeSpan 
             return time;
         }
         //[DllImport("advapi32.dll", SetLastError = true)]
