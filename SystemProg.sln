@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsProcess", "WindowsProcess\WindowsProcess.csproj", "{0C1128D4-E4C9-4130-886A-839122D4FB2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process", "Process\Process.csproj", "{C3CC2A72-F9A8-4231-81D1-163A7074A276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proc_list", "Proc_list\Proc_list.csproj", "{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{0C1128D4-E4C9-4130-886A-839122D4FB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C1128D4-E4C9-4130-886A-839122D4FB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C1128D4-E4C9-4130-886A-839122D4FB2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3CC2A72-F9A8-4231-81D1-163A7074A276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3CC2A72-F9A8-4231-81D1-163A7074A276}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3CC2A72-F9A8-4231-81D1-163A7074A276}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3CC2A72-F9A8-4231-81D1-163A7074A276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

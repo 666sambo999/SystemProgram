@@ -34,6 +34,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.labelInfo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.process = new System.Diagnostics.Process();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -76,13 +77,26 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 600;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // process
+            // 
+            this.process.EnableRaisingEvents = true;
+            this.process.StartInfo.Domain = "";
+            this.process.StartInfo.LoadUserProfile = false;
+            this.process.StartInfo.Password = null;
+            this.process.StartInfo.StandardErrorEncoding = null;
+            this.process.StartInfo.StandardOutputEncoding = null;
+            this.process.StartInfo.UserName = "";
+            this.process.SynchronizingObject = this;
+            this.process.Exited += new System.EventHandler(this.process_Exited);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 349);
+            this.ClientSize = new System.Drawing.Size(573, 365);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonStop);
@@ -101,6 +115,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Timer timer1;
+        private System.Diagnostics.Process process;
     }
 }
 
