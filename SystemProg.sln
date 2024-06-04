@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsProcess", "WindowsPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proc_list", "Proc_list\Proc_list.csproj", "{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWin", "TaskWin\TaskWin.csproj", "{864E1B69-0890-42AA-99C8-841B3F06698E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessDis", "ProcessDis\ProcessDis.csproj", "{F6FE730A-441D-49AF-9CCC-C89AEF761DAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90BB142C-1F23-4ABE-B01F-91F2AB438EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864E1B69-0890-42AA-99C8-841B3F06698E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864E1B69-0890-42AA-99C8-841B3F06698E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864E1B69-0890-42AA-99C8-841B3F06698E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864E1B69-0890-42AA-99C8-841B3F06698E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FE730A-441D-49AF-9CCC-C89AEF761DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FE730A-441D-49AF-9CCC-C89AEF761DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FE730A-441D-49AF-9CCC-C89AEF761DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FE730A-441D-49AF-9CCC-C89AEF761DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

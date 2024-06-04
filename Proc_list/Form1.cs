@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Security.Principal;
+using System.Runtime.InteropServices;
 
 namespace Proc_list
 {
@@ -126,5 +127,8 @@ namespace Proc_list
                 }
             }
         }
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hwnd, uint uMsg, IntPtr wParam, [MarshalAs(UnmanagedType.LPStr)] string lParam);
+        
     }
 }
