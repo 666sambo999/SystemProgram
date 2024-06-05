@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
+
 namespace TaskWin
 {
     public partial class MainForm : Form
@@ -22,10 +23,10 @@ namespace TaskWin
             InitializeComponent();
             listViewProc.Columns.Add("PID");
             listViewProc.Columns.Add("Name");
-            //Process[] processes = Process.GetProcesses();
             processes = Process.GetProcesses().OfType<Process>().ToList();
             UpdateProc();
             LoadProcess();
+            AllocConsole();
             RemoveCloseProc();
         }
 
@@ -46,23 +47,15 @@ namespace TaskWin
             if (processes.SequenceEqual(Process.GetProcesses().OfType<Process>().ToList())) 
                 return;
             this.processes = Process.GetProcesses().OfType<Process>().ToList();
-            //listViewProc.DataBindings.Add("Items", this.processes, "Item");
             Dictionary<int, Process> d_process = Process.GetProcesses().ToDictionary(key => key.Id, process => process);
             this.d_processes = d_process;
             listViewProc.BeginUpdate();
-            //RemoveCloseProc();
-            //listViewProc.Items.Clear();
-            //for (int i = 0; i < processes.Count; i++)
-            //{
-            //    listViewProc.Items.Add(processes[i].ProcessName);
-            //    //listViewProc.Items[i].SubItems[1].Text = (processes[i].Id.ToString());
-            //}
             AddWiewProc();
             listViewProc.EndUpdate();
         }
         void RemoveCloseProc()
         {
-            AllocConsole();
+            //AllocConsole();
             //Console.Clear();
             for (int i = 0; i < listViewProc.Items.Count; i++)
             {
@@ -75,16 +68,23 @@ namespace TaskWin
         }
         void AddWiewProc()
         {
-            for (int i = 0; i < processes.Count; i++)
+            //Console.Clear();
+            for (int i = 0; i < d_processes.Count; i++)
             {
                 KeyValuePair<int, Process> pair = d_processes.ElementAt(i);
-                ListViewItem item = new ListViewItem(pair.Key.ToString());
-                if (!listViewProc.Items.ContainsKey(pair.Key.ToString()))
+                //if (listViewProc.Items.ContainsKey(pair.Key.ToString()))
+                if (listViewProc.FindItemWithText(pair.Key.ToString())==null)
                 {
-                    listViewProc.Items.Add(pair.Value.ProcessName);
+                    ListViewItem item = new ListViewItem(pair.Key.ToString());
+                    //listViewProc.Items.Add(item);
+                    item.SubItems.Add(pair.Value.ProcessName);
                     listViewProc.Items.Add(item);
                 }
             }
+            //foreach (ListViewItem i in listViewProc.Items)
+            //{
+            //    Console.WriteLine(Convert.ToInt32(i.Text) + "\t");
+            //}
         }
         void LoadProcess()
         {
@@ -104,6 +104,7 @@ namespace TaskWin
                 listViewProc.Items[i].SubItems.Add(pair.Value.ProcessName);
             }
         }
+        
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();

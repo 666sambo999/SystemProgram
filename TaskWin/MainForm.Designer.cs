@@ -50,7 +50,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(505, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,7 +68,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(505, 331);
+            this.tabControl1.Size = new System.Drawing.Size(533, 291);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPageProc
@@ -77,7 +77,7 @@
             this.tabPageProc.Location = new System.Drawing.Point(4, 22);
             this.tabPageProc.Name = "tabPageProc";
             this.tabPageProc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProc.Size = new System.Drawing.Size(497, 305);
+            this.tabPageProc.Size = new System.Drawing.Size(525, 265);
             this.tabPageProc.TabIndex = 0;
             this.tabPageProc.Text = "Processor";
             this.tabPageProc.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.listViewProc.HideSelection = false;
             this.listViewProc.Location = new System.Drawing.Point(3, 3);
             this.listViewProc.Name = "listViewProc";
-            this.listViewProc.Size = new System.Drawing.Size(491, 299);
+            this.listViewProc.Size = new System.Drawing.Size(519, 259);
             this.listViewProc.TabIndex = 0;
             this.listViewProc.UseCompatibleStateImageBehavior = false;
             this.listViewProc.View = System.Windows.Forms.View.Details;
@@ -99,7 +99,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(497, 305);
+            this.tabPage2.Size = new System.Drawing.Size(525, 265);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 333);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 293);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(505, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(533, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 355);
+            this.ClientSize = new System.Drawing.Size(533, 315);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
