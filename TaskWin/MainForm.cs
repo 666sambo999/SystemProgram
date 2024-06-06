@@ -18,11 +18,15 @@ namespace TaskWin
         List<Process> processes;
         Process[] a_processes;
         Dictionary<int, Process> d_processes;
+        int factor = 1024;
         public MainForm()
         {
             InitializeComponent();
             listViewProc.Columns.Add("PID");
             listViewProc.Columns.Add("Name");
+            listViewProc.Columns.Add("WorkingSet");
+            listViewProc.Columns.Add("Memory");
+
             processes = Process.GetProcesses().OfType<Process>().ToList();
             UpdateProc();
             LoadProcess();
@@ -44,13 +48,15 @@ namespace TaskWin
         void UpdateProc()
         {
 
-            if (processes.SequenceEqual(Process.GetProcesses().OfType<Process>().ToList())) 
-                return;
-            this.processes = Process.GetProcesses().OfType<Process>().ToList();
+            //Dictionary<int, Process> d_process = Process.GetProcesses().ToDictionary(key => key.Id, process => process);
             Dictionary<int, Process> d_process = Process.GetProcesses().ToDictionary(key => key.Id, process => process);
+            //if (this.d_processes.SequenceEqual(d_process)) return;
+            if (processes.SequenceEqual(Process.GetProcesses().OfType<Process>().ToList())) return;
             this.d_processes = d_process;
+            //this.processes = Process.GetProcesses().OfType<Process>().ToList();
             listViewProc.BeginUpdate();
             AddWiewProc();
+            UpdateExisistProc();
             listViewProc.EndUpdate();
         }
         void RemoveCloseProc()
@@ -78,6 +84,8 @@ namespace TaskWin
                     ListViewItem item = new ListViewItem(pair.Key.ToString());
                     //listViewProc.Items.Add(item);
                     item.SubItems.Add(pair.Value.ProcessName);
+                    item.SubItems.Add((pair.Value.WorkingSet64/factor).ToString());
+                    item.SubItems.Add((pair.Value.PrivateMemorySize64/factor).ToString());
                     listViewProc.Items.Add(item);
                 }
             }
@@ -102,7 +110,24 @@ namespace TaskWin
                 KeyValuePair<int, Process> pair = d_process.ElementAt(i);
                 listViewProc.Items.Add(pair.Key.ToString());
                 listViewProc.Items[i].SubItems.Add(pair.Value.ProcessName);
+                listViewProc.Items[i].SubItems.Add((pair.Value.WorkingSet64/factor).ToString());
+                listViewProc.Items[i].SubItems.Add((pair.Value.PrivateMemorySize64/factor).ToString());
             }
+        }
+
+        void UpdateExisistProc()
+        {
+            for (int i = 0; i<listViewProc.Items.Count; i++)
+            {
+                //Console.WriteLine($"{listViewProc.Items[i].Text}\t");
+                int PID = Convert.ToInt32(listViewProc.Items[i].Text);
+                long workingSet = d_processes[PID].WorkingSet64/factor;
+                long momerySet = d_processes[PID].PrivateMemorySize64/factor;
+                listViewProc.Items[i].SubItems[2].Text = workingSet.ToString();
+                listViewProc.Items[i].SubItems[3].Text = momerySet.ToString();
+
+            }
+
         }
         
         [DllImport("kernel32.dll", SetLastError = true)]
